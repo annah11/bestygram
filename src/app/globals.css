@@ -1,60 +1,91 @@
-/* Global resets and customizations */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-}
-
-
-.chat-room-list {
+/* Container and layout */
+.chat-app {
   height: 100vh;
-  overflow-y: auto;
+}
+
+.chat-list {
+  background-color: #f3f4f6;
   border-right: 1px solid #ddd;
+  overflow-y: auto;
 }
 
-.chat-room-list h4 {
-  padding: 15px;
-  border-bottom: 1px solid #ddd;
-}
-
-/* Message box styling */
-.chat-box {
+.chat-area {
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
 
-.messages {
-  flex-grow: 1;
-  overflow-y: auto;
-  padding: 20px;
+.chat-header {
   background-color: #ffffff;
   border-bottom: 1px solid #ddd;
 }
 
-.messages div {
-  padding: 10px;
-  margin-bottom: 5px;
-  border-radius: 8px;
+.chat-body {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background-color: #e5ddd5;
 }
 
-.messages div:nth-child(odd) {
-  background-color: #f1f1f1;
-}
-
-.messages div:nth-child(even) {
-  background-color: #e9ecef;
-}
-
-/* Input group styling for chat */
-.input-group {
-  padding: 10px;
+.chat-footer {
+  display: flex;
+  align-items: center;
   background-color: #ffffff;
+  border-top: 1px solid #ddd;
 }
 
-.input-group input {
-  border-radius: 0;
+.message {
+  max-width: 60%;
+  padding: 10px;
+  border-radius: 15px;
+  margin: 5px 0;
+  position: relative;
 }
 
-.input-group .btn {
-  border-radius: 0;
+.received {
+  background-color: #ffffff;
+  align-self: flex-start;
+}
+
+.sent {
+  background-color: #dcf8c6;
+  align-self: flex-end;
+}
+
+.message-time {
+  font-size: 0.75em;
+  color: #999;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+
+.chat-contacts {
+  list-style-type: none;
+  padding: 0;
+}
+
+.chat-contacts .list-group-item {
+  border: none;
+  padding: 10px 15px;
+}
+
+.chat-contacts .avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.chat-contacts h5 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.chat-contacts p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.chat-contacts .active {
+  background-color: #d9e3f0;
 }
