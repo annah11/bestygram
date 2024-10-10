@@ -1,67 +1,33 @@
-// src/app/page.tsx
+
 export default function Home() {
   return (
-    <>
-      <head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>BestyGram Chat</title>
-        <link
-          rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        />
-        <link rel="stylesheet" href="styles.css" /> {/* Custom CSS */}
-      </head>
-      <body>
-        <div className="container-fluid chat-app">
-          <div className="row no-gutters">
-            {/* Sidebar (Chat List) */}
-            <div className="col-md-4 chat-list">
-              <div className="search-bar p-3">
-                <input type="text" className="form-control" placeholder="Search" />
-              </div>
-              <ul className="list-group chat-contacts">
-                <li className="list-group-item active">
-                  <div className="d-flex align-items-center">
-                    <div className="avatar">
-                      <img src="avatar.jpg" alt="Avatar" />
-                    </div>
-                    <div className="ml-3">
-                      <h5 className="mb-1">John Doe</h5>
-                      <p className="mb-0 text-muted">Last message preview...</p>
-                    </div>
-                  </div>
-                </li>
-                {/* Repeat for more contacts */}
-              </ul>
-            </div>
-
-            {/* Chat Area */}
-            <div className="col-md-8 chat-area">
-              <div className="chat-header p-3">
-                <h4>John Doe</h4>
-                <p className="text-muted">Last seen recently</p>
-              </div>
-              <div className="chat-body">
-                <div className="message received">
-                  <p>Hello there! How are you?</p>
-                  <span className="message-time">10:12 AM</span>
+    <div className="flex flex-col h-screen max-w-sm">
+    <div className="flex-grow overflow-y-auto">
+        <!-- Chat messages -->
+        <div className="flex flex-col mb-4 gap-4 py-4">
+            <div className="flex justify-start">
+                <div className="bg-gray-100 rounded-lg px-4 py-2 max-w-[80%]">
+                    <p className="text-gray-900 text-sm">Hey, how are you?</p>
                 </div>
-                <div className="message sent">
-                  <p>I'm doing well, thank you!</p>
-                  <span className="message-time">10:13 AM</span>
-                </div>
-                {/* Repeat for more messages */}
-              </div>
-              <div className="chat-footer p-3">
-                <input type="text" className="form-control" placeholder="Type a message" />
-                <button className="btn btn-primary ml-2">Send</button>
-              </div>
             </div>
-          </div>
+            <div className="flex justify-end">
+                <div className="bg-blue-500 rounded-lg px-4 py-2 max-w-[80%]">
+                    <p className="text-white text-sm">I'm good, thanks! How about you?</p>
+                </div>
+            </div>
+            <div className="flex justify-start">
+                <div className="bg-gray-100 rounded-lg px-4 py-2 max-w-[80%]">
+                    <p className="text-gray-900 text-sm">I'm doing great, thanks for asking!</p>
+                </div>
+            </div>
         </div>
-      </body>
-    </>
+    </div>
+    <div className="flex justify-center items-center h-16">
+        <!-- Chat input -->
+        <input type="text" className="border border-gray-300 rounded-lg py-2 px-4 w-full max-w-lg mr-4" placeholder="Type a message...">
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Send</button>
+    </div>
+</div>
     
   );
 }
